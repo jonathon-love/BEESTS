@@ -1148,7 +1148,7 @@
               </item>
               <item row="4" column="6">
                <property name="text">
-                <string>500</string>
+                <string>350</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>

@@ -415,7 +415,7 @@ void MainWindow::checkDataSet()
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(false);
 		ui->tabWidget->setCurrentIndex(0);
 
-		ui->parameterTable->item(8, 5)->setText("-1");
+		ui->parameterTable->item(8, 5)->setText("0");
 		ui->parameterTable->item(8, 6)->setText("1");
 
 		enableDisableParameters(false);
