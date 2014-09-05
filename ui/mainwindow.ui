@@ -51,7 +51,7 @@
        <enum>Qt::NoFocus</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="dataTab">
        <attribute name="title">
@@ -693,51 +693,6 @@
               </row>
               <row>
                <property name="text">
-                <string/>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string/>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>μ</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>σ</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>τ</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>P(fail)</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>New Row</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>New Row</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
-                <string>New Row</string>
-               </property>
-              </row>
-              <row>
-               <property name="text">
                 <string>New Row</string>
                </property>
               </row>
@@ -793,12 +748,12 @@
               </column>
               <column>
                <property name="text">
-                <string>Start value</string>
+                <string>Upper</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>Upper</string>
+                <string>Start value</string>
                </property>
               </column>
               <column>
@@ -813,12 +768,12 @@
               </column>
               <column>
                <property name="text">
-                <string>Start value</string>
+                <string>Upper</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>Upper</string>
+                <string>Start value</string>
                </property>
               </column>
               <item row="0" column="0">
@@ -831,7 +786,7 @@
               </item>
               <item row="0" column="1">
                <property name="text">
-                <string>Individual</string>
+                <string>Go Dist</string>
                </property>
                <property name="font">
                 <font>
@@ -869,7 +824,13 @@
               </item>
               <item row="0" column="5">
                <property name="text">
-                <string/>
+                <string>Stop Dist</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -901,7 +862,7 @@
               </item>
               <item row="1" column="1">
                <property name="text">
-                <string>Go Process</string>
+                <string>Lower</string>
                </property>
                <property name="font">
                 <font>
@@ -915,7 +876,13 @@
               </item>
               <item row="1" column="2">
                <property name="text">
-                <string/>
+                <string>Upper</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -923,7 +890,13 @@
               </item>
               <item row="1" column="3">
                <property name="text">
-                <string/>
+                <string>Start value</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -939,7 +912,7 @@
               </item>
               <item row="1" column="5">
                <property name="text">
-                <string>Stop Process</string>
+                <string>Lower</string>
                </property>
                <property name="font">
                 <font>
@@ -953,7 +926,13 @@
               </item>
               <item row="1" column="6">
                <property name="text">
-                <string/>
+                <string>Upper</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -961,113 +940,19 @@
               </item>
               <item row="1" column="7">
                <property name="text">
-                <string/>
+                <string>Start value</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="2" column="0">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="1">
-               <property name="text">
-                <string>Lower</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="2">
-               <property name="text">
-                <string>Start value</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="3">
-               <property name="text">
-                <string>Upper</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="5">
-               <property name="text">
-                <string>Lower</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="6">
-               <property name="text">
-                <string>Start value</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="2" column="7">
-               <property name="text">
-                <string>Upper</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="3" column="0">
                <property name="text">
                 <string>    μ</string>
                </property>
@@ -1081,7 +966,7 @@
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
-              <item row="3" column="1">
+              <item row="2" column="1">
                <property name="text">
                 <string>0.001</string>
                </property>
@@ -1089,7 +974,15 @@
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
-              <item row="3" column="2">
+              <item row="2" column="2">
+               <property name="text">
+                <string>1000</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="2" column="3">
                <property name="text">
                 <string>500</string>
                </property>
@@ -1097,9 +990,71 @@
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
-              <item row="3" column="3">
+              <item row="2" column="4">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="2" column="5">
+               <property name="text">
+                <string>0.001</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="2" column="6">
                <property name="text">
                 <string>1000</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="2" column="7">
+               <property name="text">
+                <string>300</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="3" column="0">
+               <property name="text">
+                <string>    μ sd</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="3" column="1">
+               <property name="text">
+                <string>0.01</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="3" column="2">
+               <property name="text">
+                <string>300</string>
+               </property>
+               <property name="flags">
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
+               </property>
+              </item>
+              <item row="3" column="3">
+               <property name="text">
+                <string>50</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1115,7 +1070,7 @@
               </item>
               <item row="3" column="5">
                <property name="text">
-                <string>0.001</string>
+                <string>0.01</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1131,7 +1086,7 @@
               </item>
               <item row="3" column="7">
                <property name="text">
-                <string>600</string>
+                <string>20</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1161,7 +1116,7 @@
               </item>
               <item row="4" column="2">
                <property name="text">
-                <string>150</string>
+                <string>500</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1169,7 +1124,7 @@
               </item>
               <item row="4" column="3">
                <property name="text">
-                <string>500</string>
+                <string>150</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1193,7 +1148,7 @@
               </item>
               <item row="4" column="6">
                <property name="text">
-                <string>150</string>
+                <string>500</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1201,7 +1156,7 @@
               </item>
               <item row="4" column="7">
                <property name="text">
-                <string>350</string>
+                <string>150</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1209,7 +1164,7 @@
               </item>
               <item row="5" column="0">
                <property name="text">
-                <string>    τ</string>
+                <string>    σ sd</string>
                </property>
                <property name="font">
                 <font>
@@ -1223,7 +1178,7 @@
               </item>
               <item row="5" column="1">
                <property name="text">
-                <string>1</string>
+                <string>0.01</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1231,7 +1186,7 @@
               </item>
               <item row="5" column="2">
                <property name="text">
-                <string>150</string>
+                <string>300</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1239,7 +1194,7 @@
               </item>
               <item row="5" column="3">
                <property name="text">
-                <string>500</string>
+                <string>20</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1255,7 +1210,7 @@
               </item>
               <item row="5" column="5">
                <property name="text">
-                <string>4</string>
+                <string>0.01</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1263,7 +1218,7 @@
               </item>
               <item row="5" column="6">
                <property name="text">
-                <string>150</string>
+                <string>300</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1271,7 +1226,7 @@
               </item>
               <item row="5" column="7">
                <property name="text">
-                <string>350</string>
+                <string>20</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1279,7 +1234,7 @@
               </item>
               <item row="6" column="0">
                <property name="text">
-                <string>    P(fail)</string>
+                <string>    τ</string>
                </property>
                <property name="font">
                 <font>
@@ -1293,26 +1248,26 @@
               </item>
               <item row="6" column="1">
                <property name="text">
-                <string/>
+                <string>1</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="6" column="2">
                <property name="text">
-                <string/>
+                <string>500</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="6" column="3">
                <property name="text">
-                <string/>
+                <string>150</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="6" column="4">
@@ -1325,7 +1280,7 @@
               </item>
               <item row="6" column="5">
                <property name="text">
-                <string>0.0</string>
+                <string>1</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1333,7 +1288,7 @@
               </item>
               <item row="6" column="6">
                <property name="text">
-                <string>0.5</string>
+                <string>350</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1341,7 +1296,7 @@
               </item>
               <item row="6" column="7">
                <property name="text">
-                <string>1.0</string>
+                <string>150</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1349,7 +1304,13 @@
               </item>
               <item row="7" column="0">
                <property name="text">
-                <string/>
+                <string>    τ sd</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1357,26 +1318,26 @@
               </item>
               <item row="7" column="1">
                <property name="text">
-                <string/>
+                <string>0.01</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="7" column="2">
                <property name="text">
-                <string/>
+                <string>300</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="7" column="3">
                <property name="text">
-                <string/>
+                <string>20</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="7" column="4">
@@ -1389,31 +1350,37 @@
               </item>
               <item row="7" column="5">
                <property name="text">
-                <string/>
+                <string>0.01</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="7" column="6">
                <property name="text">
-                <string/>
+                <string>200</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="7" column="7">
                <property name="text">
-                <string/>
+                <string>20</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="8" column="0">
                <property name="text">
-                <string/>
+                <string>    P(TF)</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1421,13 +1388,7 @@
               </item>
               <item row="8" column="1">
                <property name="text">
-                <string>Group</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
+                <string/>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1459,31 +1420,37 @@
               </item>
               <item row="8" column="5">
                <property name="text">
-                <string/>
+                <string>0.0</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="8" column="6">
                <property name="text">
-                <string/>
+                <string>1.0</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="8" column="7">
                <property name="text">
-                <string/>
+                <string>0.5</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="9" column="0">
                <property name="text">
-                <string/>
+                <string>    P(TF) sd</string>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1491,13 +1458,7 @@
               </item>
               <item row="9" column="1">
                <property name="text">
-                <string>Go Process</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
+                <string/>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -1529,689 +1490,23 @@
               </item>
               <item row="9" column="5">
                <property name="text">
-                <string>Stop Process</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
+                <string>0.01</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="9" column="6">
                <property name="text">
-                <string/>
+                <string>3</string>
                </property>
                <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
                </property>
               </item>
               <item row="9" column="7">
                <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="0">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="1">
-               <property name="text">
-                <string>Lower</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="2">
-               <property name="text">
-                <string>Start value</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="3">
-               <property name="text">
-                <string>Upper</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="5">
-               <property name="text">
-                <string>Lower</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="6">
-               <property name="text">
-                <string>Start value</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="10" column="7">
-               <property name="text">
-                <string>Upper</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="0">
-               <property name="text">
-                <string>    μ</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="1">
-               <property name="text">
-                <string>0.001</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="2">
-               <property name="text">
-                <string>500</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="3">
-               <property name="text">
-                <string>1000</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="5">
-               <property name="text">
-                <string>0.001</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="6">
-               <property name="text">
-                <string>300</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="11" column="7">
-               <property name="text">
-                <string>9</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="0">
-               <property name="text">
-                <string>    μ sd</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="1">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="2">
-               <property name="text">
-                <string>50</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="3">
-               <property name="text">
-                <string>300</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="5">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="6">
-               <property name="text">
-                <string>40</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="12" column="7">
-               <property name="text">
-                <string>5</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="0">
-               <property name="text">
-                <string>    σ</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="1">
-               <property name="text">
-                <string>1</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="2">
-               <property name="text">
-                <string>150</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="3">
-               <property name="text">
-                <string>500</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="5">
-               <property name="text">
-                <string>1</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="6">
-               <property name="text">
-                <string>150</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="13" column="7">
-               <property name="text">
-                <string>8</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="0">
-               <property name="text">
-                <string>    σ sd</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="1">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="2">
-               <property name="text">
-                <string>20</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="3">
-               <property name="text">
-                <string>300</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="5">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="6">
-               <property name="text">
-                <string>20</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="14" column="7">
-               <property name="text">
-                <string>15</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="0">
-               <property name="text">
-                <string>    τ</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="1">
-               <property name="text">
-                <string>1</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="2">
-               <property name="text">
-                <string>150</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="3">
-               <property name="text">
-                <string>500</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="5">
-               <property name="text">
-                <string>1</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="6">
-               <property name="text">
-                <string>150</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="15" column="7">
-               <property name="text">
-                <string>28</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="0">
-               <property name="text">
-                <string>    τ sd</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="1">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="2">
-               <property name="text">
-                <string>20</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="3">
-               <property name="text">
-                <string>300</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="5">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="6">
-               <property name="text">
-                <string>20</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="16" column="7">
-               <property name="text">
-                <string>50</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="0">
-               <property name="text">
-                <string>    P(fail)</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="1">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="2">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="3">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="5">
-               <property name="text">
-                <string>0.0</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="6">
-               <property name="text">
-                <string>0.5</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="17" column="7">
-               <property name="text">
-                <string>1.0</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="0">
-               <property name="text">
-                <string>    P(fail) sd</string>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="1">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="2">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="3">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="4">
-               <property name="text">
-                <string/>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="5">
-               <property name="text">
-                <string>0.01</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="6">
-               <property name="text">
                 <string>0.1</string>
-               </property>
-               <property name="flags">
-                <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>
-               </property>
-              </item>
-              <item row="18" column="7">
-               <property name="text">
-                <string>3</string>
                </property>
                <property name="flags">
                 <set>ItemIsSelectable|ItemIsEditable|ItemIsUserCheckable|ItemIsEnabled</set>

@@ -27,8 +27,6 @@ private slots:
 	void runSelectedHandler();
 	void clearSelectedHandler();
 
-	void writeAnalysisDescriptionFile();
-
 	void onDialogResponse(QAbstractButton *button);
 
     void subProcessStandardOutput();
@@ -36,6 +34,8 @@ private slots:
 	void subProcessStarted();
 	void subProcessError();
     void subProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
+	void enableDisableParameters(bool group);
     
 private:
 

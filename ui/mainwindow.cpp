@@ -94,77 +94,55 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->textFieldCPUCores->setText(QString::number(cores));
 
-	_parameterNames << "ind go mu lower"
-					<< "ind go mu start"
-					<< "ind go mu upper"
-					<< "ind stop mu lower"
-					<< "ind stop mu start"
-					<< "ind stop mu upper"
-					<< "ind go sigma lower"
-					<< "ind go sigma start"
-					<< "ind go sigma upper"
-					<< "ind stop sigma lower"
-					<< "ind stop sigma start"
-					<< "ind stop sigma upper"
-					<< "ind go tau lower"
-					<< "ind go tau start"
-					<< "ind go tau upper"
-					<< "ind stop tau lower"
-					<< "ind stop tau start"
-					<< "ind stop tau upper"
-					<< "ind stop pf lower"
-					<< "ind stop pf start"
-					<< "ind stop pf upper"
+	_parameterNames << "go mu lower"
+					<< "go mu upper"
+					<< "go mu start"
+					<< "stop mu lower"
+					<< "stop mu upper"
+					<< "stop mu start"
 
-					<< "group go mu lower"
-					<< "group go mu start"
-					<< "group go mu upper"
-					<< "group stop mu lower"
-					<< "group stop mu start"
-					<< "group stop mu upper"
+					<< "go mu sd lower"
+					<< "go mu sd upper"
+					<< "go mu sd start"
+					<< "stop mu sd lower"
+					<< "stop mu sd upper"
+					<< "stop mu sd start"
 
-					<< "group go mu sd lower"
-					<< "group go mu sd start"
-					<< "group go mu sd upper"
-					<< "group stop mu sd lower"
-					<< "group stop mu sd start"
-					<< "group stop mu sd upper"
+					<< "go sigma lower"
+					<< "go sigma upper"
+					<< "go sigma start"
+					<< "stop sigma lower"
+					<< "stop sigma upper"
+					<< "stop sigma start"
 
-					<< "group go sigma lower"
-					<< "group go sigma start"
-					<< "group go sigma upper"
-					<< "group stop sigma lower"
-					<< "group stop sigma start"
-					<< "group stop sigma upper"
+					<< "go sigma sd lower"
+					<< "go sigma sd upper"
+					<< "go sigma sd start"
+					<< "stop sigma sd lower"
+					<< "stop sigma sd upper"
+					<< "stop sigma sd start"
 
-					<< "group go sigma sd lower"
-					<< "group go sigma sd start"
-					<< "group go sigma sd upper"
-					<< "group stop sigma sd lower"
-					<< "group stop sigma sd start"
-					<< "group stop sigma sd upper"
+					<< "go tau lower"
+					<< "go tau upper"
+					<< "go tau start"
+					<< "stop tau lower"
+					<< "stop tau upper"
+					<< "stop tau start"
 
-					<< "group go tau lower"
-					<< "group go tau start"
-					<< "group go tau upper"
-					<< "group stop tau lower"
-					<< "group stop tau start"
-					<< "group stop tau upper"
+					<< "go tau sd lower"
+					<< "go tau sd upper"
+					<< "go tau sd start"
+					<< "stop tau sd lower"
+					<< "stop tau sd upper"
+					<< "stop tau sd start"
 
-					<< "group go tau sd lower"
-					<< "group go tau sd start"
-					<< "group go tau sd upper"
-					<< "group stop tau sd lower"
-					<< "group stop tau sd start"
-					<< "group stop tau sd upper"
+					<< "stop pf lower"
+					<< "stop pf upper"
+					<< "stop pf start"
 
-					<< "group stop pf lower"
-					<< "group stop pf start"
-					<< "group stop pf upper"
-
-					<< "group stop pf sd lower"
-					<< "group stop pf sd start"
-					<< "group stop pf sd upper";
+					<< "stop pf sd lower"
+					<< "stop pf sd upper"
+					<< "stop pf sd start";
 
 	for (int rowNo = 1; rowNo < ui->parameterTable->rowCount(); rowNo++)
 	{
@@ -241,7 +219,7 @@ void MainWindow::runSelectedHandler()
 				 << "\"thinning\",\"" << ui->textFieldThinning->text() << "\"\n"
 				 << "\"estimates for subjects or groups\",\"" << ui->comboBoxEstimatesForSubjectsOrGroups->currentText() << "\"\n"
 				 << "\"summary statistics\",\"" << (ui->checkBoxSummaryStatistics->isChecked() ? "1" : "0") << "\"\n"
-				 << "\"posterior distributions\",\"" << (ui->checkBoxPosteriorPredictors->isChecked() ? "1" : "0") << "\"\n"
+				 << "\"posterior distributions\",\"" << (ui->checkBoxPosteriorDistributions->isChecked() ? "1" : "0") << "\"\n"
 				 << "\"mcmc chains\",\"" << (ui->checkBoxMCMCChains->isChecked() ? "1" : "0") << "\"\n"
 				 << "\"deviance\",\"" << (ui->checkBoxDeviance->isChecked() ? "1" : "0") << "\"\n"
 				 << "\"posterior predictors\",\"" << (ui->checkBoxPosteriorPredictors->isChecked() ? "1" : "0") << "\"\n"
@@ -305,11 +283,6 @@ void MainWindow::runSelectedHandler()
 void MainWindow::clearSelectedHandler()
 {
 	ui->programOutput->clear();
-}
-
-void MainWindow::writeAnalysisDescriptionFile()
-{
-
 }
 
 void MainWindow::onDialogResponse(QAbstractButton *button)
@@ -402,6 +375,32 @@ void MainWindow::subProcessFinished(int exitCode, QProcess::ExitStatus exitStatu
 
 }
 
+void MainWindow::enableDisableParameters(bool group)
+{
+	int groupSpecificRowIndices[] = { 3, 5, 7 };
+
+	for (int i = 0; i < 3; i++)
+	{
+		int rowNo = groupSpecificRowIndices[i];
+
+		for (int colNo = 0; colNo < ui->parameterTable->columnCount(); colNo++)
+		{
+			QTableWidgetItem *item = ui->parameterTable->item(rowNo, colNo);
+			if (item != NULL)
+			{
+				Qt::ItemFlags flags = item->flags();
+
+				if (group)
+					flags |= Qt::ItemIsEnabled;
+				else
+					flags &= ~Qt::ItemIsEnabled;
+
+				item->setFlags(flags);
+			}
+		}
+	}
+}
+
 void MainWindow::checkDataSet()
 {
 
@@ -415,6 +414,8 @@ void MainWindow::checkDataSet()
 		ui->comboBoxEstimatesForSubjectsOrGroups->setCurrentIndex(0);
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(false);
 		ui->tabWidget->setCurrentIndex(0);
+
+		enableDisableParameters(false);
 	}
 	else if (_dataSet->getColumnCount() == 5
 			 && _dataSet->getColumnHeader(0) == "subj_idx"
@@ -426,6 +427,8 @@ void MainWindow::checkDataSet()
 		ui->analysisWidgets->setEnabled(true);
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(true);
 		ui->tabWidget->setCurrentIndex(0);
+
+		enableDisableParameters(true);
 	}
 	else
 	{
