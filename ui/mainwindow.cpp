@@ -377,9 +377,9 @@ void MainWindow::subProcessFinished(int exitCode, QProcess::ExitStatus exitStatu
 
 void MainWindow::enableDisableParameters(bool group)
 {
-	int groupSpecificRowIndices[] = { 3, 5, 7 };
+	int groupSpecificRowIndices[] = { 3, 5, 7, 9 };
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		int rowNo = groupSpecificRowIndices[i];
 
@@ -415,6 +415,9 @@ void MainWindow::checkDataSet()
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(false);
 		ui->tabWidget->setCurrentIndex(0);
 
+		ui->parameterTable->item(8, 5)->setText("-1");
+		ui->parameterTable->item(8, 6)->setText("1");
+
 		enableDisableParameters(false);
 	}
 	else if (_dataSet->getColumnCount() == 5
@@ -427,6 +430,9 @@ void MainWindow::checkDataSet()
 		ui->analysisWidgets->setEnabled(true);
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(true);
 		ui->tabWidget->setCurrentIndex(0);
+
+		ui->parameterTable->item(8, 5)->setText("-6");
+		ui->parameterTable->item(8, 6)->setText("6");
 
 		enableDisableParameters(true);
 	}
