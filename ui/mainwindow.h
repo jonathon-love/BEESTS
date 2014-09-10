@@ -5,6 +5,7 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QDir>
+#include <QTableWidgetItem>
 
 #include "datasettablemodel.h"
 
@@ -38,6 +39,8 @@ private slots:
 	void enableDisableParameters(bool group);
     
 private:
+
+	void setItemEnabled(QTableWidgetItem *item, bool enabled);
 
 	bool _rScriptRunning;
 

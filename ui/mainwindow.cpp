@@ -136,6 +136,8 @@ MainWindow::MainWindow(QWidget *parent) :
 					<< "stop tau sd upper"
 					<< "stop tau sd start"
 
+					<< "stop pf mean"
+					<< "stop pf sd"
 					<< "stop pf lower"
 					<< "stop pf upper"
 					<< "stop pf start"
@@ -377,7 +379,7 @@ void MainWindow::subProcessFinished(int exitCode, QProcess::ExitStatus exitStatu
 
 void MainWindow::enableDisableParameters(bool group)
 {
-	int groupSpecificRowIndices[] = { 3, 5, 7, 9 };
+	int groupSpecificRowIndices[] = { 3, 5, 7, 11 };
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -386,19 +388,27 @@ void MainWindow::enableDisableParameters(bool group)
 		for (int colNo = 0; colNo < ui->parameterTable->columnCount(); colNo++)
 		{
 			QTableWidgetItem *item = ui->parameterTable->item(rowNo, colNo);
-			if (item != NULL)
-			{
-				Qt::ItemFlags flags = item->flags();
-
-				if (group)
-					flags |= Qt::ItemIsEnabled;
-				else
-					flags &= ~Qt::ItemIsEnabled;
-
-				item->setFlags(flags);
-			}
+			setItemEnabled(item, group);
 		}
 	}
+
+	setItemEnabled(ui->parameterTable->item(10, 3), group);
+	setItemEnabled(ui->parameterTable->item(10, 4), group);
+}
+
+void MainWindow::setItemEnabled(QTableWidgetItem *item, bool enabled)
+{
+	if (item == NULL)
+		return;
+
+	Qt::ItemFlags flags = item->flags();
+
+	if (enabled)
+		flags |= Qt::ItemIsEnabled;
+	else
+		flags &= ~Qt::ItemIsEnabled;
+
+	item->setFlags(flags);
 }
 
 void MainWindow::checkDataSet()
@@ -415,8 +425,8 @@ void MainWindow::checkDataSet()
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(false);
 		ui->tabWidget->setCurrentIndex(0);
 
-		ui->parameterTable->item(8, 5)->setText("0");
-		ui->parameterTable->item(8, 6)->setText("1");
+		ui->parameterTable->item(10, 5)->setText("0");
+		ui->parameterTable->item(10, 6)->setText("1");
 
 		enableDisableParameters(false);
 	}
@@ -431,8 +441,8 @@ void MainWindow::checkDataSet()
 		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(true);
 		ui->tabWidget->setCurrentIndex(0);
 
-		ui->parameterTable->item(8, 5)->setText("-6");
-		ui->parameterTable->item(8, 6)->setText("6");
+		ui->parameterTable->item(10, 5)->setText("-6");
+		ui->parameterTable->item(10, 6)->setText("6");
 
 		enableDisableParameters(true);
 	}
