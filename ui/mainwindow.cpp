@@ -260,6 +260,7 @@ void MainWindow::runSelectedHandler()
 
         QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 		env.insert("PATH", _programDir.absolutePath());
+		env.insert("PYTHONPATH", _programDir.absoluteFilePath("Python-2.7.3/"));
 
 		_process->setWorkingDirectory(_programDir.absolutePath());
 		_process->setEnvironment(env.toStringList());
