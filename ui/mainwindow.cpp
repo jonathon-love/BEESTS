@@ -290,7 +290,7 @@ void MainWindow::onDialogResponse(QAbstractButton *button)
 	if (role == QMessageBox::HelpRole)
     {
         ui->webView->page()->currentFrame()->scrollToAnchor(QString("file-format"));
-		ui->tabWidget->setCurrentIndex(2);
+		ui->tabWidget->setCurrentIndex(3);
 	}
 }
 
