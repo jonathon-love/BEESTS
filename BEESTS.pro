@@ -30,9 +30,13 @@ HEADERS  += ui/mainwindow.h \
 
 FORMS    += ui/mainwindow.ui
 
-RESOURCES +=
+RESOURCES += \
+    ui/resources.qrc
 
 unix:OTHER_FILES += ui/app.icns
 
 windows:OTHER_FILES += \
 	ui/icon.rc
+
+OTHER_FILES += \
+    ui/info.html
