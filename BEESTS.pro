@@ -20,13 +20,13 @@ unix:ICON = ui/app.icns
 SOURCES += ui/main.cpp\
 		ui/mainwindow.cpp \
 	ui/datasettablemodel.cpp \
-	ui/csvparser.cpp \
-	ui/dataset.cpp
+	ui/dataset.cpp \
+    ui/csv.cpp
 
 HEADERS  += ui/mainwindow.h \
 	ui/datasettablemodel.h \
-	ui/csvparser.h \
-	ui/dataset.h
+	ui/dataset.h \
+    ui/csv.h
 
 FORMS    += ui/mainwindow.ui
 

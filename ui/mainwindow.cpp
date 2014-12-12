@@ -164,20 +164,15 @@ void MainWindow::openSelectedHandler() {
 
 	if ( ! _dataFile.isNull()) {
 
-		ifstream is;
-		is.open(_dataFile.toStdString().c_str(), ios::in);
-
 		DataSet *oldDataSet = _dataSet;
 
-		_dataSet = new DataSet(is);
+		_dataSet = new DataSet(_dataFile.toStdString());
 		_tableModel->setDataSet(_dataSet);
 
         if (oldDataSet != NULL)
             delete oldDataSet;
 
 		checkDataSet();
-
-		is.close();
 	}
 }
 

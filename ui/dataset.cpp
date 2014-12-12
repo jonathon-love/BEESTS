@@ -1,6 +1,6 @@
 #include "dataset.h"
 
-#include "csvparser.h"
+#include "csv.h"
 
 #include <QDebug>
 #include <vector>
@@ -20,38 +20,50 @@ DataSet::DataSet()
     m_rowCount = 0;
 }
 
-DataSet::DataSet(std::istream &is)
+DataSet::DataSet(std::string path)
 {
     m_columnCount = 0;
     m_rowCount = 0;
 
-    CSVParser parser;
+	CSV csv(path);
+	csv.open();
 
-    parser.readNextRow(is);
+	vector<string> columns = vector<string>();
+	vector<vector<string> > cells = vector<vector<string> >();
 
-	m_columnCount = parser.size();
+	csv.readLine(columns);
 
-    for (int i = 0; i < m_columnCount; i++)
-    {
-        m_columns.push_back(parser[i]);
-        m_cells.push_back(vector<string>());
-    }
+	int columnCount = columns.size();
 
-    parser.readNextRow(is);
+	for (int i = 0; i < columnCount; i++)  // columns
+		cells.push_back(vector<string>());
 
-    while (parser.size() > 0)
-    {
-        int i = 0;
-        for (; i < parser.size() && i < m_columnCount; i++)
-            m_cells[i].push_back(parser[i]);
-        for (; i < m_columnCount; i++)
-            m_cells[i].push_back(".");
+	vector<string> line;
+	bool success = csv.readLine(line);
 
-        m_rowCount++;
+	while (success)
+	{
+		int i = 0;
+		for (; i < line.size() && i < columnCount; i++)
+			cells[i].push_back(line[i]);
+		for (; i < columnCount; i++)
+			cells[i].push_back(string());
 
-        parser.readNextRow(is);
-    }
+		line.clear();
+		success = csv.readLine(line);
+	}
 
+	m_columnCount = columnCount;
+
+	if (cells.size() > 0)
+		m_rowCount = cells.at(0).size();
+	else
+		m_rowCount = 0;
+
+	m_columns = columns;
+	m_cells = cells;
+
+	csv.close();
 }
 
 DataSet::~DataSet()

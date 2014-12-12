@@ -10,7 +10,7 @@ class DataSet
 {
 public:
     DataSet();
-	DataSet(istream &is);
+	DataSet(string path);
 	~DataSet();
 
     string getCell(int row, int column);
