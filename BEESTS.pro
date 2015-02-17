@@ -12,7 +12,7 @@ TEMPLATE -= app
 unix:LIBS += -L/usr/lib/x86_64-linux-gnu/mesa/
 
 windows:INCLUDEPATH += C:/progra~1/boost/boost_1_53_0
-unix:INCLUDEPATH += /opt/local/include
+unix:INCLUDEPATH += ../boost_1_54_0
 
 windows:RC_FILE = ui/icon.rc
 unix:ICON = ui/app.icns
