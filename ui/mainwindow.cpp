@@ -57,6 +57,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	qDebug() << _pythonExe;
 
+	QFile help(_programDir.absoluteFilePath("info.html"));
+	help.open(QFile::ReadOnly);
+	QString helpContent(help.readAll());
+    ui->webView->setHtml(helpContent);
+
 	_tableModel = new DataSetTableModel();
 
 	ui->tableView->setModel(_tableModel);

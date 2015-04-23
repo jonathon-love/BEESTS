@@ -1719,7 +1719,7 @@
             <widget class="QWebView" name="webView">
              <property name="url">
               <url>
-               <string>qrc:/info.html</string>
+               <string>about:blank</string>
               </url>
              </property>
             </widget>
