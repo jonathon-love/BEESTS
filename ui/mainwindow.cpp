@@ -55,12 +55,8 @@ MainWindow::MainWindow(QWidget *parent) :
 	_rScriptExe = _programDir.absoluteFilePath("R-2.15.3/App/R-Portable/bin/Rscript.exe");
 #endif
 
-	qDebug() << _pythonExe;
-
-	QFile help(_programDir.absoluteFilePath("info.html"));
-	help.open(QFile::ReadOnly);
-	QString helpContent(help.readAll());
-    ui->webView->setHtml(helpContent);
+	QUrl url("file:///" + _programDir.absoluteFilePath("info.html"));
+	ui->webView->setUrl(url);
 
 	_tableModel = new DataSetTableModel();
 
