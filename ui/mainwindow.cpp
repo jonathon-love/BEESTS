@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	_programDir = QFileInfo( QCoreApplication::applicationFilePath() ).absoluteDir();
 
 #ifdef __APPLE__
-	_pythonExe = _programDir.absoluteFilePath("Python-2.7.3/python.exe");
+	_pythonExe = "/usr/bin/python2.7";
 	_rScriptExe = _programDir.absoluteFilePath("R-3.0.0/bin/Rscript");
 #else
 	_pythonExe = _programDir.absoluteFilePath("Python-2.7.3/python.exe");
@@ -250,7 +250,8 @@ void MainWindow::runSelectedHandler()
 
         QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 		env.insert("PATH", _programDir.absolutePath());
-		env.insert("PYTHONPATH", _programDir.absoluteFilePath("Python-2.7.3/"));
+		env.insert("PYTHONPATH", _programDir.absoluteFilePath("Python-2.7.3/lib/python2.7/site-packages"));
+		env.insert("DYLD_LIBRARY_PATH", _programDir.absoluteFilePath("Python-2.7.3/lib"));
 
 		_process->setWorkingDirectory(_programDir.absolutePath());
 		_process->setEnvironment(env.toStringList());
