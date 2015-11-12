@@ -439,6 +439,23 @@ void MainWindow::checkDataSet()
 
 		enableDisableParameters(true);
 	}
+	else if (_dataSet->getColumnCount() == 6
+			 && _dataSet->getColumnHeader(0) == "subj_idx"
+			 && _dataSet->getColumnHeader(1) == "ss_presented"
+			 && _dataSet->getColumnHeader(2) == "inhibited"
+			 && _dataSet->getColumnHeader(3) == "ssd"
+			 && _dataSet->getColumnHeader(4) == "rt"
+			 && _dataSet->getColumnHeader(5) == "cond")
+	{
+		ui->analysisWidgets->setEnabled(true);
+		ui->comboBoxEstimatesForSubjectsOrGroups->setEnabled(true);
+		ui->tabWidget->setCurrentIndex(0);
+
+		ui->parameterTable->item(10, 5)->setText("-6");
+		ui->parameterTable->item(10, 6)->setText("6");
+
+		enableDisableParameters(true);
+	}
 	else
 	{
 		ui->analysisWidgets->setEnabled(false);
