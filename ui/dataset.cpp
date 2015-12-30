@@ -5,10 +5,7 @@
 #include <QDebug>
 #include <vector>
 
-#include <boost/tokenizer.hpp>
-
 using namespace std;
-using namespace boost;
 
 /*
  * DataSet is implemented as a set of columns

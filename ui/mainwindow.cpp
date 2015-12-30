@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	_programDir = QFileInfo( QCoreApplication::applicationFilePath() ).absoluteDir();
 
 #ifdef __APPLE__
-	_pythonExe = "/usr/bin/python2.7";
+    _pythonExe = _programDir.absoluteFilePath("run");
 	_rScriptExe = _programDir.absoluteFilePath("R-3.0.0/bin/Rscript");
 #else
 	_pythonExe = _programDir.absoluteFilePath("Python-2.7.3/python.exe");
@@ -242,21 +242,26 @@ void MainWindow::runSelectedHandler()
 
 	if (_process->state() != QProcess::Running)
 	{
+#ifdef __APPLE__
+
+#endif
+
 		QStringList args = QStringList();
-		args << "-u"
-				<< _programDir.absoluteFilePath("stopsignal/run.py")
+        args
 				<< _dataFile
 				<< _analysisDir
 				<< _analysisDescriptionPath;
 
         QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-		env.insert("PATH", _programDir.absolutePath());
-		env.insert("PYTHONPATH", _programDir.absoluteFilePath("Python-2.7.3/lib/python2.7/site-packages"));
-		env.insert("DYLD_LIBRARY_PATH", _programDir.absoluteFilePath("Python-2.7.3/lib"));
+        //env.insert("PATH", _programDir.absolutePath());
+        //env.insert("PYTHONPATH", _programDir.absoluteFilePath("../Frameworks/python.framework/Versions/2.7/lib/python2.7/site-packages") + ":" + _programDir.absoluteFilePath("../Frameworks/python.framework/Versions/2.7/lib/python2.7"));
+        //qDebug() << _programDir.absoluteFilePath("../Frameworks/python.framework/Versions/2.7/lib/python2.7/site-packages");
+        //env.insert("PYTHONPATH", _programDir.absoluteFilePath("Python-2.7.3/lib/python2.7/site-packages"));
+        //env.insert("DYLD_LIBRARY_PATH", _programDir.absoluteFilePath("Python-2.7.3/lib"));
 
 		_process->setWorkingDirectory(_programDir.absolutePath());
 		_process->setEnvironment(env.toStringList());
-		_process->start(_pythonExe, args, QProcess::ReadOnly);
+        _process->start(_pythonExe, args, QProcess::ReadOnly | QProcess::Unbuffered);
 	}
 	else
 	{
