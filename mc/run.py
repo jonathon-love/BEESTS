@@ -4,6 +4,17 @@ import sys
 import cStringIO
 import numpy as np
 
+class Unbuffered(object):
+   def __init__(self, stream):
+       self.stream = stream
+   def write(self, data):
+       self.stream.write(data)
+       self.stream.flush()
+   def __getattr__(self, attr):
+       return getattr(self.stream, attr)
+
+sys.stdout = Unbuffered(sys.stdout)  # disable buffering
+
 if (len(sys.argv) != 4):
 	print("no good!")
 	exit(1)
@@ -218,7 +229,7 @@ if __name__ == "__main__":
                 print "Deviance values are saved to file"
        
         if ss.is_group_model:
-          print "DIC: %f" % ss.mc.dic
+          pass #print "DIC: %f" % ss.mc.dic
          
         else: 
         
@@ -233,3 +244,5 @@ if __name__ == "__main__":
           
           print "BIC: %f" % bic(ss)
           #print "AIC: %f" % aic(ss)
+          
+sys.exit(0)
