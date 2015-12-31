@@ -47,14 +47,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 	_programDir = QFileInfo( QCoreApplication::applicationFilePath() ).absoluteDir();
 
-#ifdef __APPLE__
-    _pythonExe = _programDir.absoluteFilePath("run");
-	_rScriptExe = _programDir.absoluteFilePath("R-3.0.0/bin/Rscript");
-#else
-	_pythonExe = _programDir.absoluteFilePath("Python-2.7.3/python.exe");
-	_rScriptExe = _programDir.absoluteFilePath("R-2.15.3/App/R-Portable/bin/Rscript.exe");
-#endif
-
 	QUrl url("file:///" + _programDir.absoluteFilePath("info.html"));
 	ui->webView->setUrl(url);
 
@@ -242,26 +234,24 @@ void MainWindow::runSelectedHandler()
 
 	if (_process->state() != QProcess::Running)
 	{
-#ifdef __APPLE__
+        QString pythonExe;
+        QStringList args = QStringList();
 
+#ifdef __APPLE__
+        pythonExe = _programDir.absoluteFilePath("run");
+        args    << _dataFile
+                << _analysisDir
+                << _analysisDescriptionPath;
+#else
+        pythonExe = _programDir.absoluteFilePath("Python-2.7.3/python.exe");
+        args    << _programDir.absoluteFilePath("stopsignal/run.py")
+                << _dataFile
+                << _analysisDir
+                << _analysisDescriptionPath;
 #endif
 
-		QStringList args = QStringList();
-        args
-				<< _dataFile
-				<< _analysisDir
-				<< _analysisDescriptionPath;
-
-        QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-        //env.insert("PATH", _programDir.absolutePath());
-        //env.insert("PYTHONPATH", _programDir.absoluteFilePath("../Frameworks/python.framework/Versions/2.7/lib/python2.7/site-packages") + ":" + _programDir.absoluteFilePath("../Frameworks/python.framework/Versions/2.7/lib/python2.7"));
-        //qDebug() << _programDir.absoluteFilePath("../Frameworks/python.framework/Versions/2.7/lib/python2.7/site-packages");
-        //env.insert("PYTHONPATH", _programDir.absoluteFilePath("Python-2.7.3/lib/python2.7/site-packages"));
-        //env.insert("DYLD_LIBRARY_PATH", _programDir.absoluteFilePath("Python-2.7.3/lib"));
-
 		_process->setWorkingDirectory(_programDir.absolutePath());
-		_process->setEnvironment(env.toStringList());
-        _process->start(_pythonExe, args, QProcess::ReadOnly | QProcess::Unbuffered);
+        _process->start(pythonExe, args, QProcess::ReadOnly);
 	}
 	else
 	{
@@ -339,23 +329,33 @@ void MainWindow::subProcessFinished(int exitCode, QProcess::ExitStatus exitStatu
     {
 		if ( ! _rScriptRunning)
         {
+            QString rScriptExe;
             QStringList args = QStringList();
-			args << _programDir.absoluteFilePath("stopsignal/run.R")
-				 << _dataFile
-				 << _analysisDir
-				 << _analysisDescriptionPath;
-
 			QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 
 #ifdef __APPLE__
-			env.insert("RHOME", _programDir.absoluteFilePath("R-3.0.0"));
-			env.insert("R_HOME", _programDir.absoluteFilePath("R-3.0.0"));
-			env.insert("R_HOME_DIR", _programDir.absoluteFilePath("R-3.0.0"));
+
+            rScriptExe = _programDir.absoluteFilePath("Rscript");
+
+            env.insert("R_HOME",     _programDir.absoluteFilePath("../Frameworks/R.framework/Versions/3.2/Resources/"));
+            env.insert("R_HOME_DIR", _programDir.absoluteFilePath("../Frameworks/R.framework/Versions/3.2/Resources/"));
+
+            args << _programDir.absoluteFilePath("../Resources/run.R")
+                 << _dataFile
+                 << _analysisDir
+                 << _analysisDescriptionPath;
+#else
+
+            rScriptExe = _programDir.absoluteFilePath("R-2.15.3/App/R-Portable/bin/Rscript.exe";
+
+            args << _programDir.absoluteFilePath("stopsignal/run.R")
+                 << _dataFile
+                 << _analysisDir
+                 << _analysisDescriptionPath;
 #endif
 
-			_process->setWorkingDirectory(_programDir.absoluteFilePath("stopsignal"));
 			_process->setEnvironment(env.toStringList());
-			_process->start(_rScriptExe, args, QProcess::ReadOnly);
+            _process->start(rScriptExe, args, QProcess::ReadOnly);
 
 			_rScriptRunning = true;
         }

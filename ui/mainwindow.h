@@ -52,8 +52,8 @@ private:
 	QProcess *_process;
 
 	QDir _programDir;
-	QString _pythonExe;
-	QString _rScriptExe;
+    //QString _pythonExe;
+    //QString _rScriptExe;
 
 	QString _dataFile;
 	QString _analysisDir;
